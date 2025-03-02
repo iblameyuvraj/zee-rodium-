@@ -1,0 +1,618 @@
+:root {
+    --primary-color: #C5A572;
+    --secondary-color: #2C2C2C;
+    --accent-color: #E8D5B5;
+    --text-color: #333333;
+    --light-bg: #F9F9F9;
+    --white: #FFFFFF;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('/placeholder.svg?height=1080&width=1920') center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+}
+
+/* Products Section */
+.products {
+    padding: 5rem 2rem;
+    background: var(--light-bg);
+}
+
+ 
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Why Us Section */
+.why-us {
+    padding: 5rem 2rem;
+    background: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 2rem;
+    background: var(--light-bg);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    padding: 1rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Footer */
+.footer {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--white);
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--secondary-color);
+        margin: 5px 0;
+        transition: var(--transition);
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+/* butoons */
+
+/* From Uiverse.io by akshayjalluri6 */ 
+.container {
+    display: flex;
+  }
+  
+  .Btn {
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-left: 10px;
+  }
+  
+  .instagram {
+    background: #f09433;
+    background: -moz-linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    background: -webkit-linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }
+  
+  .whatsapp {
+    background-color: #25d366;
+  }
+  
+  
+  .Btn:hover {
+    width: 110px;
+    transition-duration: 0.4s;
+    border-radius: 30px;
+  }
+  
+  .Btn:hover .text {
+    opacity: 1;
+    transition-duration: 0.4s;
+  }
+  
+  .Btn:hover .svgIcon {
+    opacity: 0;
+    transition-duration: 0.3s;
+  }
+  
+  .text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: 0.4s;
+  }
+  
+  .svgIcon {
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+
+/* eBay button */
+/* eBay button */
+.Btn.ebay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover animation */
+.Btn.ebay:hover {
+    width: 110px;
+    border-radius: 30px;
+    background-color: #000000;
+    transition-duration: 0.4s;
+}
+
+/* eBay text visibility on hover */
+.Btn.ebay:hover .text {
+    opacity: 1;
+    transition-duration: 0.4s;
+}
+
+/* Hide the SVG icon on hover */
+.Btn.ebay:hover .svgIcon {
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+/* eBay text styling */
+.Btn.ebay .text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: 0.4s;
+}
+
+/* SVG icon size and transition */
+.Btn.ebay .svgIcon {
+    width: 30px;
+    height: 30px;
+    transition-duration: 0.3s;
+}
+
+/* Ensuring white color for the eBay logo */
+.Btn.ebay .svgIcon path {
+    fill: white;
+}
+
+
+
+
+
+
+
+/* Alibaba button */
+.Btn.alibaba {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #FF6A00, #FF9100);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover animation */
+.Btn.alibaba:hover {
+    width: 110px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #E85E00, #FF7E00);
+    transition-duration: 0.4s;
+}
+
+/* Alibaba text visibility on hover */
+.Btn.alibaba:hover .text {
+    opacity: 1;
+    transition-duration: 0.4s;
+}
+
+/* Hide the SVG icon on hover */
+.Btn.alibaba:hover .svgIcon {
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+/* Alibaba text styling */
+.Btn.alibaba .text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: 0.4s;
+}
+
+/* SVG icon size and transition */
+.Btn.alibaba .svgIcon {
+    width: 30px;
+    height: 30px;
+    transition-duration: 0.3s;
+}
+
+/* Ensuring white color for the Alibaba logo */
+.Btn.alibaba .svgIcon path {
+    fill: white;
+}
+
+
+.explore-btn {
+    display: inline-block;
+    background-color: #c5a572;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+.explore-btn:hover {
+    background-color: #C5A572;
+}
+
+
+
+/* upper bg image */
+.hero {
+    background: url('home_1.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Optional: Gives a parallax effect */
+    color: white; /* Ensures text is visible */
+    text-align: center;
+    padding: 100px 20px; /* Adjust padding for better spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Makes it full-screen */
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Fixes potential mobile issues */
+    }
+}
+
+/* upper bg image */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Etsy button */
+.Btn.etsy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #D5641C, #F16521);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+/* Hover animation */
+.Btn.etsy:hover {
+    width: 110px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #C15015, #E2551B);
+    transition-duration: 0.4s;
+}
+
+/* Etsy text visibility on hover */
+.Btn.etsy:hover .text {
+    opacity: 1;
+    transition-duration: 0.4s;
+}
+
+/* Hide the SVG icon on hover */
+.Btn.etsy:hover .svgIcon {
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+/* Etsy text styling */
+.Btn.etsy .text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: 0.4s;
+}
+
+/* SVG icon size and transition */
+.Btn.etsy .svgIcon {
+    width: 30px;
+    height: 30px;
+    transition-duration: 0.3s;
+}
+
+/* Ensuring white color for the Etsy logo */
+.Btn.etsy .svgIcon path {
+    fill: white;
+}
